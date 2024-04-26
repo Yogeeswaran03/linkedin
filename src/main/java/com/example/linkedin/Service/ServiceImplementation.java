@@ -1,5 +1,6 @@
 package com.example.linkedin.Service;
 
+import com.example.linkedin.Entity.Post;
 import com.example.linkedin.Entity.Profile;
 import com.example.linkedin.Repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,14 @@ public class ServiceImplementation implements Service{
     }
 
     @Override
+    public List<Post> getPosts() {
+        return null;
+    }
+
+    @Override
+    public Post savePost(Post post) {
+        return null;
+        
     public Profile update(Profile profile, Long userid) {
         Profile prodb=repository.findById(userid).get();
         if (Objects.nonNull(profile.getUsername())
@@ -70,6 +79,7 @@ public class ServiceImplementation implements Service{
         }
 
         return repository.save(prodb);
+
     }
 
 
