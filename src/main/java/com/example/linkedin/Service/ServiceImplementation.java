@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @org.springframework.stereotype.Service
 public class ServiceImplementation implements Service{
@@ -34,7 +35,11 @@ public class ServiceImplementation implements Service{
 
     @Override
     public List<Comments> getComments() {
-        return (List<Comments>)crepository.findAll();
+        List<Comments> commentsList = (List<Comments>) crepository.findAll();
+
+        return commentsList.stream()
+                .map(comments -> new Comments(comments.getPost(), comments.getUser(), comments.getComment()))
+                .collect(Collectors.toList());
     }
 
     @Override

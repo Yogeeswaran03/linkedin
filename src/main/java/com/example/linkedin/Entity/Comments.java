@@ -25,6 +25,12 @@ public class Comments {
     public Comments() {
     }
 
+    public Comments(Post post, Profile user, String comment) {
+        this.post = post;
+        this.user = user;
+        this.comment = comment;
+    }
+
     // Getters and setters
     public Long getCmtId() {
         return cmtId;
