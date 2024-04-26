@@ -37,4 +37,10 @@ public class ServiceImplementation implements Service{
     }
 
 
+    @Override
+    public int getuserid(String email, String password) {
+        return repository.getuserid(email,password);
+    }
+
+
 }
