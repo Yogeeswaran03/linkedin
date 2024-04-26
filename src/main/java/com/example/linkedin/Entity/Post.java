@@ -113,6 +113,7 @@ public class Post {
                 ", media='" + media + '\'' +
                 ", hashtags='" + hashtags + '\'' +
                 ", jobTitle='" + jobTitle + '\'' +
+                ", postDate='" + postDate + '\'' +
                 '}';
     }
 }

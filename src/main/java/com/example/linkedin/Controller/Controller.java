@@ -31,11 +31,11 @@ public class Controller {
     {
         return service.savePost(post);
     }
-    @GetMapping("/Post-details")
-    public List<Post> getPosts(){
-
-        return service.getPosts();
-
-    }
+//    @GetMapping("/Post-details")
+//    public List<Post> getPosts(){
+//
+//        return service.getPosts();
+//
+//    }
 
 }
