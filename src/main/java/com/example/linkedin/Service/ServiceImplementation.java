@@ -1,8 +1,10 @@
 package com.example.linkedin.Service;
 
 import com.example.linkedin.Entity.Comments;
+import com.example.linkedin.Entity.Likes;
 import com.example.linkedin.Entity.Profile;
 import com.example.linkedin.Repository.CRepository;
+import com.example.linkedin.Repository.LRepository;
 import com.example.linkedin.Repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,6 +15,7 @@ import java.util.Objects;
 public class ServiceImplementation implements Service{
     @Autowired
     public Repository repository;
+    public LRepository lrepository;
     public CRepository crepository;
     @Override
     public Profile saveProfile(Profile profile) {
@@ -32,6 +35,16 @@ public class ServiceImplementation implements Service{
     @Override
     public List<Comments> getComments() {
         return (List<Comments>)crepository.findAll();
+    }
+
+    @Override
+    public Likes saveLikes(Likes likes) {
+        return lrepository.save(likes);
+    }
+
+    @Override
+    public List<Likes> getLikes() {
+        return (List<Likes>)lrepository.findAll();
     }
 
     @Override

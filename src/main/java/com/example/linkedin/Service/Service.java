@@ -1,6 +1,7 @@
 package com.example.linkedin.Service;
 
 import com.example.linkedin.Entity.Comments;
+import com.example.linkedin.Entity.Likes;
 import com.example.linkedin.Entity.Profile;
 
 import java.util.List;
@@ -15,4 +16,8 @@ public interface Service {
     Comments saveComments(Comments comments);
 
     List<Comments> getComments();
+
+    Likes saveLikes(Likes likes);
+
+    List<Likes> getLikes();
 }

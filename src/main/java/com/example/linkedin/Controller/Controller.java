@@ -2,6 +2,7 @@ package com.example.linkedin.Controller;
 
 
 import com.example.linkedin.Entity.Comments;
+import com.example.linkedin.Entity.Likes;
 import com.example.linkedin.Entity.Profile;
 import com.example.linkedin.Service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,4 +40,13 @@ public class Controller {
         return service.getComments();
     }
 
+    @PostMapping("/likes")
+    public Likes saveLikes(@RequestBody Likes likes){
+        return service.saveLikes(likes);
+    }
+
+    @GetMapping("/likes-count")
+    public List<Likes> getLikes(){
+        return service.getLikes();
+    }
 }
