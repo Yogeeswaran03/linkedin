@@ -1,4 +1,6 @@
 package com.example.linkedin.Entity;
+
+import com.example.linkedin.Entity.Profile;
 import jakarta.persistence.*;
 
 @Entity
@@ -10,7 +12,7 @@ public class Post {
     private Long postId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "userid", referencedColumnName = "userid", nullable = false)
     private Profile user;
 
     @Column(name = "type")
@@ -28,9 +30,6 @@ public class Post {
     @Column(name = "job_title")
     private String jobTitle;
 
-    @Column(name="post_date")
-    private String postDate;
-
     // No-arg constructor
     public Post() {
     }
@@ -40,22 +39,12 @@ public class Post {
         return postId;
     }
 
-    public String getPostDate() {
-        return postDate;
-    }
-
     public void setPostId(Long postId) {
         this.postId = postId;
     }
 
     public Profile getUser() {
         return user;
-    }
-
-    public void setPostDate(String postDate)
-    {
-        this.postDate=this.postDate;
-
     }
 
     public void setUser(Profile user) {
@@ -113,7 +102,6 @@ public class Post {
                 ", media='" + media + '\'' +
                 ", hashtags='" + hashtags + '\'' +
                 ", jobTitle='" + jobTitle + '\'' +
-                ", postDate='" + postDate + '\'' +
                 '}';
     }
 }
