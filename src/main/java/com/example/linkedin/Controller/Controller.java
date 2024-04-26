@@ -26,6 +26,7 @@ public class Controller {
 
 
 
+
     @PostMapping("/Post")
     public Post savePost(@RequestBody Post post)
     {
@@ -35,6 +36,10 @@ public class Controller {
     public List<Post> getPosts(){
 
         return service.getPosts();
+
+    @PutMapping("/Profile/{userid}")
+    public Profile update(@RequestBody Profile profile,@PathVariable("userid") Long userid){
+        return service.update(profile,userid);
 
     }
 

@@ -11,7 +11,11 @@ public interface Service {
 
     List<Profile> getDetails();
 
+
     List<Post> getPosts();
 
     Post savePost(Post post);
+
+    Profile update(Profile profile, Long userid);
+
 }
