@@ -1,6 +1,7 @@
 package com.example.linkedin.Controller;
 
 
+import com.example.linkedin.Entity.Post;
 import com.example.linkedin.Entity.Profile;
 import com.example.linkedin.Service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,18 @@ public class Controller {
         return service.getDetails();
     }
 
-    @PutMapping
+
+
+    @PostMapping("/Post")
+    public Post savePost(@RequestBody Post post)
+    {
+        return service.savePost(post);
+    }
+    @GetMapping("/Post-details")
+    public List<Post> getPosts(){
+
+        return service.getPosts();
+
+    }
 
 }
