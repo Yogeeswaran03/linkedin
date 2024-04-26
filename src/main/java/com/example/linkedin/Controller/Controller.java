@@ -24,7 +24,10 @@ public class Controller {
         return service.getDetails();
     }
 
-    @PutMapping
+    @PutMapping("/Profile/{userid}")
+    public Profile update(@RequestBody Profile profile,@PathVariable("userid") Long userid){
+        return service.update(profile,userid);
+    }
 
     @PostMapping("/Comments")
     public Comments saveComments(@RequestBody Comments comments){

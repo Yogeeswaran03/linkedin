@@ -10,6 +10,8 @@ public interface Service {
 
     List<Profile> getDetails();
 
+    Profile update(Profile profile, Long userid);
+
     Comments saveComments(Comments comments);
 
     List<Comments> getComments();
