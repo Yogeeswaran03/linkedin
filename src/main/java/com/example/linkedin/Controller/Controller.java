@@ -1,7 +1,11 @@
 package com.example.linkedin.Controller;
 
 
+
 import com.example.linkedin.Entity.LoginRequest;
+
+import com.example.linkedin.Entity.Post;
+
 import com.example.linkedin.Entity.Profile;
 import com.example.linkedin.Service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +35,23 @@ public class Controller {
         return service.getDetails();
     }
 
+
+
+
+    @PostMapping("/Post")
+    public Post savePost(@RequestBody Post post)
+    {
+        return service.savePost(post);
+    }
+    @GetMapping("/Post-details")
+    public List<Post> getPosts(){
+
+        return service.getPosts();
+
     @PutMapping("/Profile/{userid}")
     public Profile update(@RequestBody Profile profile,@PathVariable("userid") Long userid){
         return service.update(profile,userid);
+
     }
 
 }
