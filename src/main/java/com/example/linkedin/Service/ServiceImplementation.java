@@ -2,6 +2,7 @@ package com.example.linkedin.Service;
 
 import com.example.linkedin.Entity.Comments;
 import com.example.linkedin.Entity.Likes;
+import com.example.linkedin.Entity.Post;
 import com.example.linkedin.Entity.Profile;
 import com.example.linkedin.Repository.CRepository;
 import com.example.linkedin.Repository.LRepository;
@@ -29,6 +30,16 @@ public class ServiceImplementation implements Service{
     }
 
     @Override
+    public List<Post> getPosts() {
+        return null;
+    }
+
+    @Override
+    public Post savePost(Post post) {
+        return null;
+    }
+
+    @Override
     public Comments saveComments(Comments comments) {
         return crepository.save(comments);
     }
@@ -38,7 +49,7 @@ public class ServiceImplementation implements Service{
         List<Comments> commentsList = (List<Comments>) crepository.findAll();
 
         return commentsList.stream()
-                .map(comments -> new Comments(comments.getPost(), comments.getUser(), comments.getComment()))
+                .map(comments -> new Comments(comments.getPostID(), comments.getUserId(), comments.getCmt()))
                 .collect(Collectors.toList());
     }
 

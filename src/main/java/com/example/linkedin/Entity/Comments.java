@@ -25,10 +25,14 @@ public class Comments {
     public Comments() {
     }
 
-    public Comments(Post post, Profile user, String comment) {
-        this.post = post;
-        this.user = user;
-        this.comment = comment;
+    private Long postId;
+    private Long userId;
+    private String cmt;
+
+    public Comments(Long post, Long user, String comment) {
+        this.postId = post;
+        this.userId = user;
+        this.cmt = comment;
     }
 
     // Getters and setters
@@ -40,24 +44,24 @@ public class Comments {
         this.cmtId = cmtId;
     }
 
-    public Post getPost() {
-        return post;
+    public Long getPostID() {
+        return post.getPostId();
     }
 
     public void setPost(Post post) {
         this.post = post;
     }
 
-    public Profile getUser() {
-        return user;
+    public Long getUserId() {
+        return user.getUserid();
     }
 
     public void setUser(Profile user) {
         this.user = user;
     }
 
-    public String getComment() {
-        return comment;
+    public String getCmt() {
+        return cmt;
     }
 
     public void setComment(String comment) {
@@ -69,9 +73,9 @@ public class Comments {
     public String toString() {
         return "Comments{" +
                 "cmtId=" + cmtId +
-                ", post=" + post +
-                ", user=" + user +
-                ", comment='" + comment + '\'' +
+                ", post=" + postId +
+                ", user=" + userId +
+                ", comment='" + cmt + '\'' +
                 '}';
     }
 }

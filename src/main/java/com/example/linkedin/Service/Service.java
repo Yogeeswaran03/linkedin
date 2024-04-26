@@ -2,6 +2,7 @@ package com.example.linkedin.Service;
 
 import com.example.linkedin.Entity.Comments;
 import com.example.linkedin.Entity.Likes;
+import com.example.linkedin.Entity.Post;
 import com.example.linkedin.Entity.Profile;
 
 import java.util.List;
@@ -20,4 +21,8 @@ public interface Service {
     Likes saveLikes(Likes likes);
 
     List<Likes> getLikes();
+
+    List<Post> getPosts();
+
+    Post savePost(Post post);
 }
