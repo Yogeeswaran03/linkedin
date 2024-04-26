@@ -1,6 +1,7 @@
 package com.example.linkedin.Controller;
 
 
+import com.example.linkedin.Entity.Comments;
 import com.example.linkedin.Entity.Profile;
 import com.example.linkedin.Service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +25,15 @@ public class Controller {
     }
 
     @PutMapping
+
+    @PostMapping("/Comments")
+    public Comments saveComments(@RequestBody Comments comments){
+        return service.saveComments(comments);
+    }
+
+    @GetMapping("/Comments-details")
+    public List<Comments> getComments(){
+        return service.getComments();
+    }
 
 }
