@@ -1,6 +1,7 @@
 package com.example.linkedin.Controller;
 
 
+import com.example.linkedin.Entity.LoginRequest;
 import com.example.linkedin.Entity.Profile;
 import com.example.linkedin.Service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +13,18 @@ import java.util.List;
 public class Controller {
     @Autowired
     public Service service;
+    public LoginRequest loginRequest;
 
     @PostMapping("/Profile")
     public Profile saveProfile(@RequestBody Profile profile){
         return service.saveProfile(profile);
     }
+
+    @PostMapping("/Profile-id")
+    public int saveProfile(@RequestBody LoginRequest loginRequest) {
+        return service.getuserid(loginRequest.getEmail(), loginRequest.getPassword());
+    }
+
 
     @GetMapping("/Profile-details")
     public List<Profile> getDetails(){

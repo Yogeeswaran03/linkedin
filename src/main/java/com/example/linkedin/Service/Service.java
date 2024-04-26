@@ -11,4 +11,6 @@ public interface Service {
     List<Profile> getDetails();
 
     Profile update(Profile profile, Long userid);
+
+    int getuserid(String email, String password);
 }

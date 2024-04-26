@@ -72,5 +72,10 @@ public class ServiceImplementation implements Service{
         return repository.save(prodb);
     }
 
+    @Override
+    public int getuserid(String email, String password) {
+        return repository.getuserid(email,password);
+    }
+
 
 }
